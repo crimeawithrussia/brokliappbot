@@ -5,7 +5,7 @@ body {
     background-color: #f0f0f0;
 }
 
-h1 {
+h1, h2 {
     color: #333;
 }
 
@@ -25,4 +25,12 @@ button:hover {
 
 #content {
     margin-top: 20px;
+}
+
+.product {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
 }
