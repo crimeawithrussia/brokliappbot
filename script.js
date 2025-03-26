@@ -15,9 +15,8 @@ const products = [
 // Корзина (пока пустая)
 let cart = [];
 
-// Настраиваем главную кнопку
-tg.MainButton.setText("Перейти в корзину");
-tg.MainButton.hide(); // Скрываем, пока корзина пуста
+// Настраиваем главную кнопку только для корзины
+tg.MainButton.hide(); // Скрываем по умолчанию
 tg.MainButton.onClick(() => showCart());
 
 // Функции для кнопок
@@ -39,7 +38,8 @@ function addToCart(productId) {
     const product = products.find(p => p.id === productId);
     cart.push(product);
     alert(`${product.name} добавлен в корзину!`);
-    tg.MainButton.show(); // Показываем кнопку корзины
+    tg.MainButton.setText("Перейти в корзину");
+    tg.MainButton.show();
 }
 
 function showCart() {
