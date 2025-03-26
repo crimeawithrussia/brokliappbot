@@ -1,10 +1,16 @@
-// Инициализация Telegram Web App
 const tg = window.Telegram.WebApp;
 tg.ready();
 
 // Показываем имя пользователя
 const user = tg.initDataUnsafe.user;
 document.getElementById("user-name").innerText = `Привет, ${user.first_name}!`;
+
+// Настраиваем главную кнопку
+tg.MainButton.setText("Открыть магазин");
+tg.MainButton.show();
+tg.MainButton.onClick(() => {
+    document.getElementById("content").innerHTML = "<p>Выберите раздел:</p>";
+});
 
 // Функции для кнопок
 function showCatalog() {
